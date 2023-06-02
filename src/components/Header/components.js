@@ -9,6 +9,7 @@ export const HeaderContainer = styled('header')(() => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 3,
 }));
 
 export const HeaderLogoTitleBlock = styled('div')(() => ({

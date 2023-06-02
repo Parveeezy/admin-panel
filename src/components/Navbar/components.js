@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavbarContainer = styled('nav')(() => ({
     display: 'block',
-    width: '15%',
+    width: '20vw',
     height: '100vh',
     backgroundColor: '#3c3c3c',
     color: '#fff',
@@ -20,7 +20,7 @@ export const NavbarItems = styled('ul')(() => ({
 
 export const NavbarItem= styled('li')(() => ({
     color: '#fff',
-    fontSize: 18,
+    fontSize: '1vw',
     fontWeight: 300,
     width: '100%',
     height: '100%',
@@ -49,6 +49,7 @@ export const NavbarItemLink = styled(NavLink)(() => ({
     '&:hover': {
         backgroundColor: '#727272',
         borderLeft: '8px solid #fff',
+        color: 'gold'
     },
 
 }))

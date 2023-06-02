@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Avatar, Button, MenuItem } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -39,18 +39,6 @@ export const HeaderProfileBlock = styled('div')(() => ({
     alignItems: 'center',
 }));
 
-export const HeaderRefreshButton = styled(Button)(() => ({
-    '&.MuiButton-root': {
-        color: 'red',
-        borderColor: 'red',
-        marginRight: 10,
-        '&:hover': {
-            color: 'orange',
-            borderColor: 'orange',
-        },
-    },
-}));
-
 export const HeaderProfile = styled(Avatar)(() => ({
     backgroundColor: 'orange',
 }));
@@ -72,7 +60,7 @@ export const HeaderProfileMenuButton = styled(Button)(() => ({
 
 export const HeaderProfileMenu = styled(Menu)(() => ({
     marginTop: 45,
-    marginLeft: 7,
+    marginLeft: 53,
 
     'ul': {
         backgroundColor: '#4d4d4d',

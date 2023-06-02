@@ -9,7 +9,7 @@ const Navbar = () => {
                     <NavbarItemLink>Предложения</NavbarItemLink>
                 </NavbarItem>
                 <NavbarItem>
-                    <NavbarItemLink>Модераторы</NavbarItemLink>
+                    <NavbarItemLink to={'/moderators'}>Модераторы</NavbarItemLink>
                 </NavbarItem>
                 <NavbarItem>
                     <NavbarItemLink>Обучение</NavbarItemLink>

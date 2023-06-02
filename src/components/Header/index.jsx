@@ -10,9 +10,9 @@ import {
     HeaderProfileMenuArrow,
     HeaderProfileMenuButton,
     HeaderProfileMenuItems,
-    HeaderRefreshButton,
     HeaderTitle,
 } from './components';
+import { ButtonUi } from '../ui/ButtonComponent';
 
 const Header = () => {
 
@@ -40,9 +40,11 @@ const Header = () => {
             </HeaderLogoTitleBlock>
 
             <HeaderProfileBlock>
-                <HeaderRefreshButton variant='outlined'>
-                    Refresh
-                </HeaderRefreshButton>
+
+                <ButtonUi
+                    variant='outlined'
+                    text={'refresh'}
+                />
 
                 <HeaderProfileMenuButton
                     id='demo-positioned-button'

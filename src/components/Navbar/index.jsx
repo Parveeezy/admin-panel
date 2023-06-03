@@ -6,16 +6,16 @@ const Navbar = () => {
         <NavbarContainer>
             <NavbarItems>
                 <NavbarItem>
-                    <NavbarItemLink>Предложения</NavbarItemLink>
+                    <NavbarItemLink to={'/offers'}>Предложения</NavbarItemLink>
                 </NavbarItem>
                 <NavbarItem>
                     <NavbarItemLink to={'/moderators'}>Модераторы</NavbarItemLink>
                 </NavbarItem>
                 <NavbarItem>
-                    <NavbarItemLink>Обучение</NavbarItemLink>
+                    <NavbarItemLink to={'/classes'}>Обучение</NavbarItemLink>
                 </NavbarItem>
                 <NavbarItem>
-                    <NavbarItemLink>Уведомления</NavbarItemLink>
+                    <NavbarItemLink to={'/notifications'}>Уведомления</NavbarItemLink>
                 </NavbarItem>
             </NavbarItems>
         </NavbarContainer>

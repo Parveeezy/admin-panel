@@ -1,13 +1,14 @@
 import React from 'react';
+
 import { CustomInput } from './components';
 
-const InputUi = (props) => {
+const InputUi = ({ disablePortal, id, options, sx, renderInput }) => {
     return <CustomInput
-        disablePortal={props.disablePortal}
-        id={props.id}
-        options={props.options}
-        sx={props.sx}
-        renderInput={props.renderInput}
+        disablePortal={disablePortal}
+        id={id}
+        options={options}
+        sx={sx}
+        renderInput={renderInput}
     />;
 };
 

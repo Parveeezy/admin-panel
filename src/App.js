@@ -1,26 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
-import ModeratorsComponent from './components/Moderators';
 
-const appContainer = {
-    backgroundColor: '#151515',
-    height: '100vh - 100%',
-    display: 'grid',
-    gridTemplateColumns: '1fr 10fr',
-};
+import { ClassesPage, ModeratorsPage } from './pages';
 
-function App() {
-    return (
-        <>
-            <Header />
-            <div style={appContainer}>
-                <Navbar />
-                <ModeratorsComponent />
-            </div>
-        </>
-    );
-}
+import { LayoutComponent } from './components';
+
+const App = () => (
+    <Routes>
+        <Route path="/" element={<LayoutComponent />}>
+            <Route path="/moderators" element={<ModeratorsPage />} />
+            <Route path="/classes" element={<ClassesPage />} />
+        </Route>
+    </Routes>
+);
 
 export default App;

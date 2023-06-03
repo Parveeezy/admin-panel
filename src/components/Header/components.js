@@ -43,9 +43,15 @@ export const HeaderProfile = styled(Avatar)(() => ({
     backgroundColor: 'orange',
 }));
 
-export const HeaderProfileMenuArrow = styled(KeyboardArrowDownIcon)(({ openMenu }) => ({
+export const HeaderProfileMenuArrow = styled(props => (
+    <span {...props}>
+        <KeyboardArrowDownIcon />
+    </span>
+))(({ $openMenu }) => ({
+    display: 'flex',
     color: '#fff',
-    transform: openMenu ? 'rotate(0.5turn)' : '',
+    transition: 'all .3s ease',
+    transform: $openMenu && 'rotate(0.5turn)',
 }));
 
 export const HeaderProfileMenuButton = styled(Button)(() => ({
@@ -68,6 +74,7 @@ export const HeaderProfileMenu = styled(Menu)(() => ({
 }));
 
 export const HeaderProfileMenuItems = styled(MenuItem)(() => ({
+    backgroundColor: "red",
     '&.MuiMenuItem-root': {
         color: '#fff',
         '&:hover': {

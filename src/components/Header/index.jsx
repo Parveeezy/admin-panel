@@ -59,7 +59,7 @@ const Header = () => {
                         P
                     </HeaderProfile>
 
-                    <HeaderProfileMenuArrow openMenu={openMenu}/>
+                    <HeaderProfileMenuArrow $openMenu={openMenu}/>
                 </HeaderProfileMenuButton>
                 <HeaderProfileMenu
                     id="demo-positioned-menu"
@@ -69,11 +69,11 @@ const Header = () => {
                     onClose={handleClose}
                     anchorOrigin={{
                         vertical: 'top',
-                        horizontal: 'left',
+                        horizontal: 'right',
                     }}
                     transformOrigin={{
                         vertical: 'top',
-                        horizontal: 'left',
+                        horizontal: 'right',
                     }}
                 >
                     <HeaderProfileMenuItems onClick={handleClose}>Profile</HeaderProfileMenuItems>

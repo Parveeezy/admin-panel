@@ -6,6 +6,7 @@ export const CustomBtn = styled(Button)(() => ({
         color: '#fff',
         borderColor: 'red',
         marginRight: 10,
+        height: '100%',
 
         '&:hover': {
             color: 'orange',

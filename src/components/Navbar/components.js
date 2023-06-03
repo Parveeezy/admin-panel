@@ -48,8 +48,11 @@ export const NavbarItemLink = styled(NavLink)(() => ({
 
     '&:hover': {
         backgroundColor: '#727272',
-        borderLeft: '8px solid #fff',
-        color: 'gold'
     },
 
+    '&.active': {
+        backgroundColor: '#727272',
+        borderLeft: '8px solid #fff',
+        color: 'gold'
+    }
 }))

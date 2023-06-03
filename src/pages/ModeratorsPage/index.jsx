@@ -1,11 +1,14 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+
+import { ModeratorsHeaderComponent } from '../../components';
+import { ModeratorsTableComponent } from '../../components';
 
 const ModeratorsPage = () => {
     return (
-        <Routes>
-            <Route path={'/moderators'} element={<ModeratorsPage />} />
-        </Routes>
+        <div>
+            <ModeratorsHeaderComponent />
+            <ModeratorsTableComponent />
+        </div>
     );
 };
 

@@ -40,7 +40,7 @@ export const HeaderProfileBlock = styled('div')(() => ({
 }));
 
 export const HeaderProfile = styled(Avatar)(() => ({
-    backgroundColor: 'orange',
+
 }));
 
 export const HeaderProfileMenuArrow = styled(props => (

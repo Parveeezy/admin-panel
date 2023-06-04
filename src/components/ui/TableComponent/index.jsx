@@ -6,46 +6,25 @@ import {
     ItemsWrapper,
     ItemWrapper,
     ListNumber,
-    Name,
-    Person,
-    PersonImg,
-    SelectStatus,
-    Status, StatusBlock, StatusColor,
-    Wrapper,
+    Wrapper
 } from './components';
 
-const moderators = [
-    {
-        id: 1,
-        name: 'Александр Сергеевич Пушкин',
-        img: 'A',
-        status: 'Активный',
-    }, {
-        id: 2,
-        name: 'Антон Павлович Чехов',
-        img: 'A',
-        status: 'Приостановлен',
-    }, {
-        id: 3,
-        name: 'Лев Николаевич Толстой',
-        img: 'L',
-        status: 'Удалён',
-    },
-];
-
-const ModeratorsTableComponent = () => {
+const TableComponent = ({ description, table }) => {
     return (
         <Wrapper>
             <DescriptionBlock>
-                <Description>
-                    Ф.И.О.
-                </Description>
-                <Description>
-                    Статус
-                </Description>
+
+                {description.map(el => {
+                    return(
+                        <Description>
+                            {el}
+                        </Description>
+                    )
+                })}
+
             </DescriptionBlock>
             <ItemsWrapper>
-                {moderators.map(el => {
+                {table.map(el => {
                     return (
                         <ItemBlock>
                             <ItemWrapper>
@@ -58,7 +37,7 @@ const ModeratorsTableComponent = () => {
                                 </Person>
 
                                 <StatusBlock>
-                                    <StatusColor/>
+                                    <StatusColor />
                                     <Status>{el.status}</Status>
                                 </StatusBlock>
 
@@ -74,4 +53,4 @@ const ModeratorsTableComponent = () => {
     );
 };
 
-export default ModeratorsTableComponent;
+export default TableComponent;

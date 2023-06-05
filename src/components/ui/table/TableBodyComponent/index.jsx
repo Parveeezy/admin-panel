@@ -12,9 +12,9 @@ const TableBodyComponent = ({ rows, fields }) => {
                     {fields.map((field, index) => (
                         <CellComponent {...field}>
                             {row[field.fieldName]}
-                            <SelectComponent variant='outlined' text={'search'}/>
                         </CellComponent>
                     ))}
+                    <SelectComponent variant='outlined' text={'search'} />
                 </RowComponent>
             ))}
         </TableBody>

@@ -2,7 +2,7 @@ import React from 'react';
 import PaginationUi from '../../ui/PaginationComponent';
 import InputUi from '../../ui/InputComponent';
 import { CustomTextField } from '../../ui/InputComponent/components';
-import { ButtonUi } from '../../ui/ButtonComponent';
+import { ButtonComponent } from '../../ui/ButtonComponent';
 import { SearchBlock, Title, Wrapper } from './components';
 
 const top100Films = [
@@ -30,7 +30,7 @@ const ModeratorsHeaderComponent = () => {
                     sx={{ width: '55%' }}
                     renderInput={(params) => <CustomTextField {...params} label='Поиск...' />}
                 />
-                <ButtonUi variant='outlined' text='Добавить' />
+                <ButtonComponent variant='outlined' text='Добавить' />
             </SearchBlock>
         </Wrapper>
     );

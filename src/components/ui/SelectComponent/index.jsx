@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { ButtonUi } from '../ButtonComponent';
+import { ButtonComponent } from '../ButtonComponent';
 import { StyledMenu, StyledMenuItem } from './components';
-import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
-import { HeaderProfileMenuButton } from '../../Header/components';
+import { Button } from '@mui/material';
 
 const status = {
     set: 'назначить',
@@ -10,26 +9,40 @@ const status = {
     delete: 'Удалить',
 };
 
-const SelectComponent = ({ text }) => {
+const SelectComponent = ({ text, variant }) => {
     const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+    const [openMenu, setOpenMenu] = useState(false);
 
+    const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        setOpenMenu(!openMenu);
     };
-
     const handleClose = () => {
         setAnchorEl(null);
+        setOpenMenu(false);
     };
 
     return (
-        <ButtonUi>
+        <>
+            <ButtonComponent
+                id='demo-positioned-button'
+                aria-controls={open ? 'demo-positioned-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                disableRipple
+                variant={variant}
+                text={text}
+            >
+                {text}
+            </ButtonComponent>
+
             <StyledMenu
                 id='demo-positioned-menu'
                 aria-labelledby='demo-positioned-button'
                 anchorEl={anchorEl}
                 open={open}
-                onClick={handleClick}
                 onClose={handleClose}
                 anchorOrigin={{
                     vertical: 'top',
@@ -40,9 +53,11 @@ const SelectComponent = ({ text }) => {
                     horizontal: 'right',
                 }}
             >
-                <StyledMenuItem onClick={handleClose}>ddddddddddddddddddddddddf</StyledMenuItem>
+                <StyledMenuItem onClick={handleClose}>Profile</StyledMenuItem>
+                <StyledMenuItem onClick={handleClose}>My account</StyledMenuItem>
+                <StyledMenuItem onClick={handleClose}>Logout</StyledMenuItem>
             </StyledMenu>
-        </ButtonUi>
+        </>
     );
 };
 

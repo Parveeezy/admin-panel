@@ -12,36 +12,33 @@ import {
     HeaderProfileMenuItems,
     HeaderTitle,
 } from './components';
-import { ButtonUi } from '../ui/ButtonComponent';
+import { ButtonComponent } from '../ui/ButtonComponent';
 
 const Header = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
-    const [openMenu, setOpenMenu] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false);
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
-        setOpenMenu(!openMenu)
+        setOpenMenu(!openMenu);
     };
     const handleClose = () => {
         setAnchorEl(null);
-        setOpenMenu(false)
+        setOpenMenu(false);
     };
 
     return (
         <HeaderContainer>
-
             <HeaderLogoTitleBlock>
                 <HeaderLogo />
                 <HeaderTitle>
                     LoGo
                 </HeaderTitle>
             </HeaderLogoTitleBlock>
-
             <HeaderProfileBlock>
-
-                <ButtonUi
+                <ButtonComponent
                     variant='outlined'
                     text={'refresh'}
                 />
@@ -54,16 +51,15 @@ const Header = () => {
                     onClick={handleClick}
                     disableRipple
                 >
-
                     <HeaderProfile>
                         P
                     </HeaderProfile>
 
-                    <HeaderProfileMenuArrow $openMenu={openMenu}/>
+                    <HeaderProfileMenuArrow $openMenu={openMenu} />
                 </HeaderProfileMenuButton>
                 <HeaderProfileMenu
-                    id="demo-positioned-menu"
-                    aria-labelledby="demo-positioned-button"
+                    id='demo-positioned-menu'
+                    aria-labelledby='demo-positioned-button'
                     anchorEl={anchorEl}
                     open={open}
                     onClose={handleClose}
@@ -81,8 +77,6 @@ const Header = () => {
                     <HeaderProfileMenuItems onClick={handleClose}>Logout</HeaderProfileMenuItems>
                 </HeaderProfileMenu>
             </HeaderProfileBlock>
-
-
         </HeaderContainer>
     );
 };

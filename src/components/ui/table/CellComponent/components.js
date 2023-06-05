@@ -1,15 +1,14 @@
 import styled from 'styled-components';
+import { TableCell } from '@mui/material';
 
-export const CellWrapper = styled('div')({
+export const CellWrapper = styled(TableCell)({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    borderBottom: '3px solid #898989',
-    maxWidth: 750,
-    paddingBottom: 15,
-    paddingTop: 20,
-    paddingLeft: 75,
-    marginLeft: 20,
+    flexGrow: 1,
+    padding: '15px 0',
+    color: '#fff',
+    fontWeight: 600,
 });
 
 export const Description = styled('div')({

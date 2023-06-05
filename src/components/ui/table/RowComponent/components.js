@@ -1,9 +1,20 @@
 import styled from 'styled-components';
-import { Avatar, Button } from '@mui/material';
+import { Avatar, Button, TableHead, TableRow } from '@mui/material';
 
-export const RowWrapper = styled('div')({
-    width: '96%',
+export const RowWrapper = styled(TableRow)({
+    display: "flex",
     marginLeft: 20,
+});
+
+export const HeadWrapper = styled(({ children, ...props }) => (
+    <TableHead {...props}>
+        <TableRow>
+            {children}
+        </TableRow>
+    </TableHead>
+))({
+    color: '#fff',
+    fontWeight: 600,
 });
 
 export const Block = styled('div')({

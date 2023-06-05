@@ -1,14 +1,13 @@
 import React from 'react';
-import CellComponent from '../CellComponent';
-import RowComponent from '../RowComponent';
 import { Wrapper } from './components';
+import TableHeadComponent from '../TableHeadComponent';
+import TableBodyComponent from '../TableBodyComponent';
 
-
-const TableComponent = ({ cell, row, btn }) => {
+const TableComponent = ({ fields, rows }) => {
     return (
         <Wrapper>
-            <CellComponent cell={cell} />
-            <RowComponent row={row} btn={btn}/>
+            <TableHeadComponent fields={fields} />
+            <TableBodyComponent fields={fields} rows={rows} />
         </Wrapper>
     );
 };

@@ -1,9 +1,6 @@
 import styled from 'styled-components';
+import { Table } from '@mui/material';
 
-export const Wrapper = styled('div')({
-    maxWidth: 1220,
-    margin: 25,
-    backgroundColor: '#3c3c3c',
-    borderRadius: 10,
-    paddingBottom: 30,
+export const Wrapper = styled(Table)({
+
 });

@@ -1,16 +1,17 @@
 import React from 'react';
 import { Description, CellWrapper } from './components';
 
-const CellComponent = ({ cell }) => {
+const CellComponent = ({ children, ...props }) => {
     return (
-        <CellWrapper>
-            {cell.map(el => {
-                return (
-                    <Description>
-                        {el.title}
-                    </Description>
-                );
-            })}
+        <CellWrapper {...props}>
+            {children}
+            {/*{cell.map(el => {*/}
+            {/*    return (*/}
+            {/*        <Description>*/}
+            {/*            {el.title}*/}
+            {/*        </Description>*/}
+            {/*    );*/}
+            {/*})}*/}
         </CellWrapper>
     );
 };

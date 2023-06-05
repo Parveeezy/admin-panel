@@ -1,10 +1,10 @@
 import React from 'react';
 import { CustomBtn } from './components';
 
-export const ButtonUi = (props) => {
+export const ButtonUi = ({ variant, text }) => {
     return (
-        <CustomBtn variant={props.variant}>
-            {props.text}
+        <CustomBtn variant={variant}>
+            {text}
         </CustomBtn>
     );
 };

@@ -1,37 +1,12 @@
 import styled from 'styled-components';
 import { Avatar, Button } from '@mui/material';
 
-export const Wrapper = styled('div')({
-    maxWidth: 1220,
-    margin: 25,
-    backgroundColor: '#3c3c3c',
-    borderRadius: 10,
-    paddingBottom: 30,
-});
-
-export const DescriptionBlock = styled('div')({
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderBottom: '3px solid #898989',
-    maxWidth: 750,
-    paddingBottom: 15,
-    paddingTop: 20,
-    paddingLeft: 65,
+export const RowWrapper = styled('div')({
+    width: '96%',
     marginLeft: 20,
 });
 
-export const Description = styled('span')({
-    color: '#fff',
-    fontSize: 18,
-});
-
-export const ItemsWrapper = styled('div')({
-    width: '100%',
-    marginLeft: 20,
-});
-
-export const ItemBlock = styled('div')({
+export const Block = styled('div')({
     borderBottom: '3px solid #898989',
     width: '90%',
     paddingTop: 25,
@@ -46,7 +21,7 @@ export const ItemWrapper = styled('div')({
     paddingLeft: 30,
 });
 
-export const ListNumber = styled('span')({
+export const RowNumber = styled('span')({
     color: '#fff',
     textAlign: 'start',
 });
@@ -72,6 +47,7 @@ export const Name = styled('span')({
     fontWeight: 'bold',
     marginLeft: 10,
 });
+
 export const StatusBlock = styled('div')({
     width: 130,
     display: 'flex',
@@ -92,5 +68,20 @@ export const Status = styled('span')({
 });
 
 export const SelectStatus = styled(Button)({
-    color: '#fff',
+    '&.MuiButton-root': {
+        color: '#fff',
+        border: '2px solid red',
+
+        '&:hover': {
+            color: 'orange',
+            border: '2px solid orange',
+        }
+    }
 });
+
+export const SelectStatusWrapper = styled('div')({
+    maxWidth: 350,
+    maxHeight: 350,
+    borderRadius: 10
+})
+

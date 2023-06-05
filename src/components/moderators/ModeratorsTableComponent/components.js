@@ -17,7 +17,7 @@ export const DescriptionBlock = styled('div')({
     maxWidth: 750,
     paddingBottom: 15,
     paddingTop: 20,
-    paddingLeft: 65,
+    paddingLeft: 75,
     marginLeft: 20,
 });
 
@@ -72,6 +72,7 @@ export const Name = styled('span')({
     fontWeight: 'bold',
     marginLeft: 10,
 });
+
 export const StatusBlock = styled('div')({
     width: 130,
     display: 'flex',

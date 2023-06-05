@@ -1,18 +1,5 @@
 import React from 'react';
-import {
-    Description,
-    DescriptionBlock,
-    ItemBlock,
-    ItemsWrapper,
-    ItemWrapper,
-    ListNumber,
-    Name,
-    Person,
-    PersonImg,
-    SelectStatus,
-    Status, StatusBlock, StatusColor,
-    Wrapper,
-} from './components';
+import TableComponent from '../../ui/table/TableComponent';
 
 const moderators = [
     {
@@ -35,42 +22,11 @@ const moderators = [
 
 const ModeratorsTableComponent = () => {
     return (
-        <Wrapper>
-            <DescriptionBlock>
-                <Description>
-                    Ф.И.О.
-                </Description>
-                <Description>
-                    Статус
-                </Description>
-            </DescriptionBlock>
-            <ItemsWrapper>
-                {moderators.map(el => {
-                    return (
-                        <ItemBlock>
-                            <ItemWrapper>
-
-                                <ListNumber>{el.id}</ListNumber>
-
-                                <Person>
-                                    <PersonImg>{el.img}</PersonImg>
-                                    <Name>{el.name}</Name>
-                                </Person>
-
-                                <StatusBlock>
-                                    <StatusColor/>
-                                    <Status>{el.status}</Status>
-                                </StatusBlock>
-
-                                <SelectStatus variant='outlined'>
-                                    Select Status
-                                </SelectStatus>
-                            </ItemWrapper>
-                        </ItemBlock>
-                    );
-                })}
-            </ItemsWrapper>
-        </Wrapper>
+        <TableComponent
+            cell={[{ title: 'Ф.И.О.' }, { title: 'Статус' }]}
+            row={moderators}
+            btn={{ message: 'Выбрать статус', variant: 'outlined' }}
+        />
     );
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { CustomBtn } from './components';
 
-export const ButtonComponent = ({ variant, text }) => {
+export const ButtonComponent = ({ text, ...props }) => {
     return (
-        <CustomBtn variant={variant}>
+        <CustomBtn {...props}>
             {text}
         </CustomBtn>
     );

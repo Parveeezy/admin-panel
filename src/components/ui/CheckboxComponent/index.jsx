@@ -1,12 +1,8 @@
 import React from 'react';
-import { CheckboxButton } from './components';
+import { Checkbox } from '@mui/material';
 
-const CheckboxUI = ({ variant }) => {
-    return (
-        <CheckboxButton variant={variant}>
-
-        </CheckboxButton>
-    );
+const CheckboxUI = ({ ...props }) => {
+    return <Checkbox {...props} />;
 };
 
 export default CheckboxUI;

@@ -7,11 +7,8 @@ export const CellWrapper = styled(TableCell)({
     alignItems: 'center',
     flexGrow: 1,
     padding: '15px 0',
-    color: '#fff',
+    '&.MuiTableCell-root': {
+        color: '#fff',
+    },
     fontWeight: 600,
 });
-
-export const Description = styled('div')({
-    color: '#fff',
-    fontSize: 18,
-})

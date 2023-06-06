@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
 import { ButtonComponent } from '../ButtonComponent';
 import { StyledMenu, StyledMenuItem } from './components';
-import { Button } from '@mui/material';
+import CheckboxUI from '../CheckboxComponent';
 
-const status = {
-    set: 'назначить',
-    stop: 'Приостановить',
-    delete: 'Удалить',
-};
+const status = [
+    { name: 'Назначить', status: 'Активный' },
+    { name: 'Удалить', status: 'Удалён' },
+    { name: 'Остановить', status: 'Приостановлен' },
+];
 
 const SelectComponent = ({ text, variant }) => {
     const [anchorEl, setAnchorEl] = useState(null);
-    const [openMenu, setOpenMenu] = useState(false);
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
-        setOpenMenu(!openMenu);
     };
+
     const handleClose = () => {
         setAnchorEl(null);
-        setOpenMenu(false);
     };
 
     return (
@@ -53,9 +51,14 @@ const SelectComponent = ({ text, variant }) => {
                     horizontal: 'right',
                 }}
             >
-                <StyledMenuItem onClick={handleClose}>Profile</StyledMenuItem>
-                <StyledMenuItem onClick={handleClose}>My account</StyledMenuItem>
-                <StyledMenuItem onClick={handleClose}>Logout</StyledMenuItem>
+                {status.map(el => {
+                    return (
+                        <StyledMenuItem onClick={handleClose}>
+                            <CheckboxUI value={el.status}/>
+                            {el.name}
+                        </StyledMenuItem>
+                    );
+                })}
             </StyledMenu>
         </>
     );

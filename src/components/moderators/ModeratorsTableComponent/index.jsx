@@ -1,36 +1,21 @@
 import React from 'react';
 import TableComponent from '../../ui/table/TableComponent';
-import { PersonImg } from '../../ui/table/RowComponent/components';
 import { Wrapper } from './components';
-
-const moderators = [
-    {
-        id: 1,
-        name: 'Александр Сергеевич Пушкин',
-        img: <PersonImg />,
-        status: 'Активный',
-    }, {
-        id: 2,
-        name: 'Антон Павлович Чехов',
-        img: <PersonImg />,
-        status: 'Приостановлен',
-    }, {
-        id: 3,
-        name: 'Лев Николаевич Толстой',
-        img: <PersonImg />,
-        status: 'Удалён',
-    },
-];
+import SelectComponent from '../../ui/SelectComponent';
+import { useSelector } from 'react-redux';
 
 const fields = [
     { fieldName: 'id', title: '', style: { maxWidth: 80 } },
     { fieldName: 'img', title: '', style: { maxWidth: 80 } },
     { fieldName: 'name', title: 'Ф.И.О.' },
     { fieldName: 'status', title: 'Статус' },
-    { fieldName: 'actions', title: '', style: { borderBottomColor: 'transparent' } },
+    { fieldName: 'actions', title: '',  selectStatus: <SelectComponent variant='outlined' text={'Выбрать статус'} /> },
 ];
 
 const ModeratorsTableComponent = () => {
+
+    const moderators = useSelector(state => state.moderators)
+
     return (
         <Wrapper>
             <TableComponent

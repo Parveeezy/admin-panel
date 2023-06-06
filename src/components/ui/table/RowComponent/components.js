@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Avatar, Button, TableHead, TableRow } from '@mui/material';
 
 export const RowWrapper = styled(TableRow)({
-    display: "flex",
+    display: 'flex',
     marginLeft: 20,
 });
 
@@ -86,13 +86,13 @@ export const SelectStatus = styled(Button)({
         '&:hover': {
             color: 'orange',
             border: '2px solid orange',
-        }
-    }
+        },
+    },
 });
 
 export const SelectStatusWrapper = styled('div')({
     maxWidth: 350,
     maxHeight: 350,
-    borderRadius: 10
-})
+    borderRadius: 10,
+});
 

@@ -2,19 +2,18 @@ import React from 'react';
 import { TableBody } from '@mui/material';
 import RowComponent from '../RowComponent';
 import CellComponent from '../CellComponent';
-import SelectComponent from '../../SelectComponent';
 
 const TableBodyComponent = ({ rows, fields }) => {
     return (
         <TableBody>
-            {rows.map(row => (
-                <RowComponent row={row} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            {rows.map((row, index) => (
+                <RowComponent key={index} row={row} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                     {fields.map((field, index) => (
                         <CellComponent {...field}>
                             {row[field.fieldName]}
+                            {field.selectStatus}
                         </CellComponent>
                     ))}
-                    <SelectComponent variant='outlined' text={'search'} />
                 </RowComponent>
             ))}
         </TableBody>

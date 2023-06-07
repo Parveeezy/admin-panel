@@ -3,11 +3,11 @@ import { Wrapper } from './components';
 import TableHeadComponent from '../TableHeadComponent';
 import TableBodyComponent from '../TableBodyComponent';
 
-const TableComponent = ({ fields, rows }) => {
+const TableComponent = ({ fields, rows, actions }) => {
     return (
         <Wrapper>
-            <TableHeadComponent fields={fields} />
-            <TableBodyComponent fields={fields} rows={rows} />
+            <TableHeadComponent fields={fields} hasActions={!!actions} />
+            <TableBodyComponent fields={fields} rows={rows} actions={actions} />
         </Wrapper>
     );
 };

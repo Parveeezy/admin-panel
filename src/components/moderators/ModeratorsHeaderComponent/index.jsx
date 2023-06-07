@@ -2,32 +2,42 @@ import React from 'react';
 import PaginationUi from '../../ui/PaginationComponent';
 import InputUi from '../../ui/InputComponent';
 import { CustomTextField } from '../../ui/InputComponent/components';
-import { ButtonComponent } from '../../ui/ButtonComponent';
 import { SearchBlock, Title, Wrapper } from './components';
-
-const moderatorsList = [
-    { label: 'Александр Сергеевич Пушкин' },
-    { label: 'Антон Павлович Чехов' },
-    { label: 'Лев Николаевич Толстой' },
-];
+import { useDispatch, useSelector } from 'react-redux';
+import { changeModeratorFilteredId, changePage, setTableLength } from '../../../store/moderators/moderatorsSlice';
+import { ModalComponent } from '../../ui/ModalComponent';
+import { Search } from '@mui/icons-material';
 
 const ModeratorsHeaderComponent = () => {
 
+    const { moderatorsList } = useSelector(state => state.moderators);
+    const dispatch = useDispatch();
+
+    const onChangeInputValue = (event) => {
+        dispatch(changeModeratorFilteredId(event.target.value));
+    };
+
+    const onSetModeratorsLength = () => {
+        dispatch(setTableLength(moderatorsList.length - 1));
+    };
+
+    const handleChangePagination = (e, page) => {
+        dispatch(changePage(page));
+    };
 
     return (
         <Wrapper>
             <Title>Модераторы</Title>
             <SearchBlock>
 
-                <PaginationUi count={10} variant='outlined' shape='rounded' />
-                <InputUi
-                    disablePortal
-                    id='combo-box-demo'
-                    options={moderatorsList}
-                    sx={{ width: '55%' }}
-                    renderInput={(params) => <CustomTextField {...params} label='Поиск...' />}
+                <PaginationUi
+                    count={Math.ceil(moderatorsList.length / 10)}
+                    variant='outlined'
+                    shape='rounded'
+                    onChange={handleChangePagination}
                 />
-                <ButtonComponent variant='outlined' text='Добавить' />
+                <CustomTextField label='Поиск...' InputProps={{ endAdornment: <Search /> }} onChange={onChangeInputValue} style={{marginLeft: '10px', marginRight: '10px'}} />
+                <ModalComponent />
             </SearchBlock>
         </Wrapper>
     );

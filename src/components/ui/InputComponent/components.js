@@ -3,7 +3,7 @@ import { Autocomplete, TextField } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
 export const CustomInput = styled((props) => (
-    <Autocomplete {...props} popupIcon={<Search />}/>
+    <Autocomplete {...props} popupIcon={<Search />} />
 ))(() => ({
     '&. MuiAutocomplete-root ': {
         width: '100%',
@@ -25,6 +25,8 @@ export const CustomInput = styled((props) => (
 }));
 
 export const CustomTextField = styled(TextField)(() => ({
+    width: '70%',
+
     backgroundColor: 'transparent',
     '& label.Mui-focused': {
         color: '#c3c3c3',
@@ -33,6 +35,8 @@ export const CustomTextField = styled(TextField)(() => ({
         borderBottomColor: '#868686',
     },
     '& .MuiOutlinedInput-root': {
+        color: '#fff',
+
         '& fieldset': {
             borderColor: '#868686',
         },
@@ -42,11 +46,11 @@ export const CustomTextField = styled(TextField)(() => ({
         '&.Mui-focused fieldset': {
             borderColor: '#c3c3c3',
         },
-        "& svg": {
-            color: '#868686'
+        '& svg': {
+            color: '#868686',
         },
     },
-    label : {
-        color: '#868686'
-    }
+    label: {
+        color: '#868686',
+    },
 }));

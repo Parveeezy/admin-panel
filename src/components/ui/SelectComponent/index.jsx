@@ -3,13 +3,7 @@ import { ButtonComponent } from '../ButtonComponent';
 import { StyledMenu, StyledMenuItem } from './components';
 import CheckboxUI from '../CheckboxComponent';
 
-const status = [
-    { name: 'Назначить', status: 'Активный' },
-    { name: 'Удалить', status: 'Удалён' },
-    { name: 'Остановить', status: 'Приостановлен' },
-];
-
-const SelectComponent = ({ text, variant }) => {
+const SelectComponent = ({ options, value, onChange, text, variant = 'outlined' }) => {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const open = Boolean(anchorEl);
@@ -20,6 +14,11 @@ const SelectComponent = ({ text, variant }) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleChange = (newValue) => {
+        onChange(newValue);
+        handleClose();
+    }
 
     return (
         <>
@@ -51,11 +50,11 @@ const SelectComponent = ({ text, variant }) => {
                     horizontal: 'right',
                 }}
             >
-                {status.map(el => {
+                {options.map(el => {
                     return (
-                        <StyledMenuItem onClick={handleClose}>
-                            <CheckboxUI value={el.status}/>
-                            {el.name}
+                        <StyledMenuItem key={el.value} onClick={() => handleChange(el.value)}>
+                            <CheckboxUI checked={el.value === value}/>
+                            {el.title}
                         </StyledMenuItem>
                     );
                 })}

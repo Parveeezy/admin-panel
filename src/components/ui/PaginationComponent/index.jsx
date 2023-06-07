@@ -1,8 +1,13 @@
 import React from 'react';
 import { PaginationComponent } from './components';
 
-const PaginationUi = (props) => {
-    return <PaginationComponent count={props.count} variant={props.variant} shape={props.shape}/>
+const PaginationUi = ({ count, variant, shape, onChange }) => {
+    return <PaginationComponent
+        count={count}
+        variant={variant}
+        shape={shape}
+        onChange={onChange}
+    />;
 };
 
 export default PaginationUi;
